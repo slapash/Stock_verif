@@ -1,6 +1,7 @@
 
 import pyodbc
 
+
 #à changer pour la librairie:
 #SERVER_NAME 
 #DATABASE_NAME
@@ -25,9 +26,10 @@ def demande(demande):
 
    
     for row in cursor:
-         row_to_list = [elem for elem in row]
+         liste_en_stock = [elem for elem in row]
+
     cursor.close()
     cnxn.close()
-    return row_to_list[0]
+    return liste_en_stock[0]
     
 

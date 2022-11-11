@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Non disponible</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ISBN non disponibles</th>
+        </tr>
+        {% for elem in out_stock %}
+        <tr>
+            <td>{{ elem }}</td>
+            <td><input type="checkbox" name="check" id="check"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

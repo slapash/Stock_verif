@@ -20,12 +20,12 @@ def upload_file():
    if request.method == 'POST':
         f = request.files['file']
         liste_isbn = fr(f)
-        resultat = []
+        en_stock = []
         for i in range(len(liste_isbn)):
             if demande(liste_isbn[i]) == 1:
-                resultat.append(liste_isbn[i])
-        
-        return resultat    
+                en_stock.append(liste_isbn[i])
+        non_en_stock = [x for x in liste_isbn if x not in en_stock ]
+        return render_template('resultat.html', out_stock = non_en_stock)  
     
     
 
