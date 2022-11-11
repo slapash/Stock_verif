@@ -1,16 +1,21 @@
 import pandas as pd
 
+#dev purposes
+#file = r"C:\Users\benai\Desktop\GLOVO.xlsx"
+liste = ["bestsellers", "books in english","idées cadeaux","mangas", "livres en arabe", "livres pour enfants","romans made in morocco", "essais made in morocco", "beaux livres", "nouveautés", "jeunesse"]
 
 #préciser le type de dataframe dtype={'':str} en string pour avoir les bons isbn
 
 def isbn_file_read(file):
-    df = pd.read_excel(file, dtype={'ISBN':str})
+    df = pd.read_excel(file, liste, dtype={'ISBN':str})
+    df = [df[elem]['ISBN'].dropna() for elem in liste]
+    resultat = []
+    for i in range(len(df)):
+        resultat.append(df[i].tolist())
 
-    df = df[df['ISBN'].notna()]
-
-    df = df["ISBN"]
-
+    resultat = [j for sub in resultat for j in sub] #flatten list (2D --> 1D)
+    return resultat
 
 
-    return df.tolist()
+
 
