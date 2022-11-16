@@ -31,3 +31,8 @@ apres avoir exécuté le fichier main.py on peut acceder au site via:
 une fois fait il faut charger le fichier excel sur le site et clicker sur le boutton submit
 
 le résultat est une liste des livres dans le fichier excel avec le titre et le stock
+
+Un exemple du résultat dans un navigateur:
+
+![screen](https://user-images.githubusercontent.com/22305318/202291708-8a2391fc-a642-4f56-8995-a4c646647d14.png)
+
