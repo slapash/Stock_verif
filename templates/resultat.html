@@ -5,18 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
-    <title>Non disponible</title>
+    <title>Stock Glovo</title>
 </head>
 <body>
     <table>
         <tr>
-            <th>ISBN non disponibles</th>
+            <th>Stock Glovo temps reel</th>
         </tr>
-        {% for elem in out_stock %}
         <tr>
-            <td>{{ elem }}</td>
-            <td><input type="checkbox" name="check" id="check"></td>
+            <th>ISBN</th>
+            <th>Titre p1</th>
+            <th>Titre p2</th>
+            <th>Stock</th>
         </tr>
+        
+        {% for elem in liste %}
+            <tr>
+                {% for item in elem %}
+                <td>{{ item }}</td>
+                {% endfor %}
+                <td><input type="checkbox" name="" id=""></td>
+            </tr>
         {% endfor %}
     </table>
 </body>

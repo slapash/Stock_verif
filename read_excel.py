@@ -12,9 +12,14 @@ def isbn_file_read(file):
     resultat = []
     for i in range(len(df)):
         resultat.append(df[i].tolist())
-
+    
     resultat = [j for sub in resultat for j in sub] #flatten list (2D --> 1D)
+    resultat = tuple(resultat)
     return resultat
+
+
+
+
 
 
 

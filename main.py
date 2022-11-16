@@ -18,16 +18,25 @@ def home():
 @app.route('/handler', methods = ['GET', 'POST'])
 def upload_file():
    if request.method == 'POST':
+        book_list = []
         f = request.files['file']
-        liste_isbn = fr(f)
+        liste_isbn = fr(f) #gets isbn list
+        book_list = demande(liste_isbn)
+        """"
+        for i in range(len(liste_isbn)):
+            book_list.append(demande(liste_isbn[i]))#list in list inner list --> [isbn, title 1, title 2, stock]
+        """  
+        """
         en_stock = []
         for i in range(len(liste_isbn)):
             if demande(liste_isbn[i]) == 1:
                 en_stock.append(liste_isbn[i])
         non_en_stock = [x for x in liste_isbn if x not in en_stock ]
-        return render_template('resultat.html', out_stock = non_en_stock)  
-    
-    
+        """
+        #return render_template('resultat.html', out_stock = non_en_stock)  
+        
+        return render_template('resultat.html', liste = book_list)
+
 
 
 if __name__ == '__main__':
