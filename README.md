@@ -10,7 +10,8 @@ méthode
 Il faut aller dans Microsoft SQL Management Studio pour récuperer les informations nécessaires
 Le nom de la base est CARREFOURDULIVRE 
 Pour le nom du serveur il faut créer une requete sur la base CARREFOURDULIVRE et mettre le code suivant: 
->SELECT @@SERVERNAME   
+>SELECT @@SERVERNAME 
+  
 puis executer la requete, le résultat sera le nom du serveur et enfin mettre ces informations dans le fichier DB_query.py
 
 
