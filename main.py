@@ -22,6 +22,12 @@ def upload_file():
         f = request.files['file']
         liste_isbn = fr(f) #gets isbn list
         book_list = demande(liste_isbn)
+        def last(n):
+            return n[-1] 
+  
+        def sort(tuples):
+            return sorted(tuples, key=last)
+        book_list = sort(book_list)
         """"
         for i in range(len(liste_isbn)):
             book_list.append(demande(liste_isbn[i]))#list in list inner list --> [isbn, title 1, title 2, stock]
