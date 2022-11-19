@@ -5,3 +5,20 @@ td, th {
 table{
     border-collapse: collapse;
 }
+
+.red{
+    background-color: tomato;
+    
+}
+.green{
+    background-color: seagreen;
+}
+.orange{
+    
+    background-color: coral;
+}
+th{
+    background-color: gray;
+    color:white
+    
+}

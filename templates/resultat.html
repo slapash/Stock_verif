@@ -18,15 +18,52 @@
             <th>Titre p2</th>
             <th>Stock</th>
         </tr>
-        
-        {% for elem in liste %}
-            <tr>
-                {% for item in elem %}
-                <td>{{ item }}</td>
-                {% endfor %}
-                <td><input type="checkbox" name="" id=""></td>
-            </tr>
+        <tr>
+            <th colspan="4">Hors stock</th>
+        </tr>
+        {% for elem1, elem2, elem3, elem4 in liste %}
+        {% if elem4 < 1 %}
+        <tr>
+            
+            <td class = "zero">{{elem1}}</td>
+            <td class = "zero">{{elem2}}</td>
+            <td class = "zero">{{elem3}}</td>
+            <td class = "zero">{{elem4}}</td>
+            
+            <td class = red><input type="checkbox" name="" id="" ></td>
+        </tr>
+        {% endif %} 
         {% endfor %}
+        <tr>
+            <th colspan="4">Entre 1 et 3</th>
+        </tr>
+        {% for elem1, elem2, elem3, elem4 in liste %}
+        {% if elem4 < 4 and elem4 > 0 %}
+        <tr>
+            <td class = "moins_trois">{{elem1}}</td>
+            <td class = "moins_trois">{{elem2}}</td>
+            <td class = "moins_trois">{{elem3}}</td>
+            <td class = "moins_trois">{{elem4}}</td>
+            <td class = "orange"><input type="checkbox" name="" id="" ></td>
+        </tr>
+        {% endif %} 
+        {% endfor %}
+        <tr>
+            <th colspan="4">Plus que 3</th>
+        </tr>
+        {% for elem1, elem2, elem3, elem4 in liste %}
+        {% if elem4 > 3 %}
+        <tr>
+            <td class = "reste">{{elem1}}</td>
+            <td class = "reste">{{elem2}}</td>
+            <td class = "reste">{{elem3}}</td>
+            <td class = "reste">{{elem4}}</td>
+            <td class = "green"><input type="checkbox" name="" id="" ></td>
+        </tr>
+        {% endif %} 
+        {% endfor %}
+
+       
     </table>
 </body>
 </html>
